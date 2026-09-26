@@ -1,0 +1,285 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ── Кнопка «наверх» не перекрывает открытые меню ─────────────────────────
+   Панель вариантов поиска живёт внутри sticky-секции поиска (z-30), а
+   кнопка «наверх» — z-40: на мобильном при открытой клавиатуре вьюпорт
+   сжат, панель вариантов доходит до низа видимой области — и кнопка
+   оказывалась ПОВЕРХ панели. Пока открыто любое меню (варианты поиска,
+   «Сортировка», «Параметр поиска»), кнопку прячем — плавно (transition
+   уже есть в её классах); правило вне @layer перекрывает утилиту
+   data-[show=true]:opacity-100 (приём как у cursor: pointer ниже). */
+button[data-menu-open="true"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Курсор-указатель для всех кликабельных элементов ─────────────────────
+   Кроме полей ввода: у них текстовый курсор-каретка. Правила объявлены вне
+   @layer — так они перекрывают cursor-default из ui-компонентов (пункты меню
+   и списков), который живёт в слое utilities. */
+button:not(:disabled),
+[role="button"]:not(:disabled),
+[role="menuitem"]:not(:disabled),
+[role="option"]:not(:disabled),
+[role="combobox"]:not(:disabled),
+[role="tab"]:not(:disabled),
+a[href],
+summary {
+  cursor: pointer;
+}
+
+/* ── Раскладка секции «Статистика»: контейнер-запрос вместо JS-замера ──────
+   Узкая раскладка (ячейки на всю ширину первой строкой, управление —
+   второй, «Сортировка» растянута) раньше включалась эффектом после
+   монтирования (замер clientWidth + setState) — на мобильных первый
+   кадр отрисовывался широким, и строки статистики/сортировки
+   перестраивались уже после загрузки. Контейнер-запрос считает ширину
+   секции прямо в CSS — до первой отрисовки, прыжка нет. Порог 620px —
+   прежний STATS_WRAP_AT; ширину секции задаёт родитель, классы детей
+   на неё не влияют — самоблокировки (осцилляции) нет. */
+.stats-sec {
+  container-type: inline-size;
+}
+.stats-cells,
+.stats-controls {
+  width: 100%;
+}
+.stats-cell {
+  flex: 1 1 0%;
+  justify-content: center;
+}
+.stats-sort {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+@container (min-width: 620px) {
+  .stats-cells,
+  .stats-controls {
+    width: auto;
+  }
+  .stats-controls {
+    margin-left: auto;
+  }
+  .stats-cell {
+    flex: none;
+    justify-content: flex-start;
+  }
+  .stats-sort {
+    flex: none;
+    width: 14rem; /* w-56 */
+  }
+}
+
+/* ── Сохранённый вид «строки» показывается в первом кадре ────────────────
+   Оба списка команд всегда есть в статическом HTML (начальное состояние —
+   «карточки»: список строк скрыт классом hidden). Если пользователь сохранил
+   компактный вид, inline-скрипт в layout.tsx ставит data-flash-view="rows"
+   на <html> ещё до первой отрисовки — эти правила меняют списки местами:
+   строки видны сразу, из статического HTML, без ожидания гидрации (раньше
+   строки ждали загрузки JS и появлениялись с заметной задержкой, пока
+   карточки были в HTML заранее). page.tsx синхронизирует состояние и снимает
+   метку: дальше работают классы. Правила вне @layer перекрывают утилиты
+   hidden/grid/flex (приём как у cursor: pointer ниже). */
+html[data-flash-view="rows"] [data-view-cards] {
+  display: none;
+}
+html[data-flash-view="rows"] [data-view-rows] {
+  display: flex;
+  /* В статическом HTML список строк скрыт утилитой hidden — классы его
+     «рабочего» состояния (flex flex-col gap-1.5 mt-2) в разметку НЕ входят.
+     Без этих трёх свойств первый кадр рисовал строки обычным flex-РЯДОМ —
+     горизонтально, одной широкой линией, — и лишь после гидрации они
+     перестраивались в колонку. Повторяем строчные классы дословно:
+     flex-col → column, gap-1.5 → 6px, mt-2 → 8px. */
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+/* Подсветка переключателя вида — правильная с первого кадра: статический
+   HTML отрендерен с активной «Карточками»; пока стоит метка (сохранён
+   компактный вид), эти правила перекрашивают активной кнопку «Компактный»
+   ещё ДО гидрации — раньше подсветка прыгала «Карточки → Компактный» уже
+   после загрузки страницы. Правила вне @layer перекрывают утилиты Tailwind
+   (приём как у cursor: pointer ниже); после снятия метки работают классы. */
+html[data-flash-view="rows"] .view-toggle-cards {
+  background-color: transparent;
+  color: #9aa5b8;
+}
+html[data-flash-view="rows"] .view-toggle-rows {
+  background-color: #d3bc8e;
+  color: #1c2333;
+}
+
+/* ── Рамки фокуса убраны ПОЛНОСТЬЮ ─────────────────────────────
+   Просьба пользователя (20.09): никаких рамок фокуса — ни после клика/тапа,
+   ни на Tab/стрелки. Активность видна и без них: hover/active-классы
+   кнопок, focus-within-рамка строки поиска, подсветка пунктов меню
+   (focus:bg), золотая рамка раскрытой строки. Правило вне @layer
+   перекрывает и базовый слой (outline-ring/50), и утилиты — приём как у
+   cursor: pointer. */
+:focus,
+:focus-visible {
+  outline: none;
+}
+
+/* ── Полосы прокрутки в стиле страницы ──────────────────────────────
+   Фон html/body — цвет страницы: за прозрачной дорожкой скроллбара всегда
+   тёмное — раньше там просвечивал белый bg-background светлой темы, и полоса
+   «становилась белой». Radix-меню больше не блокируют прокрутку окна
+   (modal={false} в page.tsx): скроллбар и ~8px контента не исчезают на время
+   открытого меню.
+   Chromium/Safari (::-webkit-scrollbar): узкая (8px), ползунок — полоса
+   с полностью скруглёнными краями, при наведении — золотой; дорожка
+   прозрачная. На ВСЕХ ширинах окна (просьба 19.09): раньше правила жили в
+   @media (min-width:768px) — в узком десктопном окне и на телефонах полоса
+   становилась стандартной (широкой и без скругления).
+   Firefox (::-webkit-scrollbar не поддерживает): ползунок красится
+   стандартным scrollbar-color — его ставит инлайн-скрипт в layout.tsx
+   ТОЛЬКО в Firefox. В CSS его держать нельзя: свойство наследуется, и в
+   Chromium (121+) ненулевое значение (как и у scrollbar-width)
+   ОТКЛЮЧАЕТ webkit-правила — сборщик CSS к тому же разворачивает
+   @supports-обёртки и вливает правило в html. */
+html,
+body {
+  background-color: #141c2b;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #3d4d6d;
+  border: 1.5px solid transparent;
+  border-radius: 9999px;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a68b5c;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
