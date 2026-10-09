@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@source not "../../scripts";
+@source not "../../worklog.md";
+@source not "../../DIALOG_LOG.md";
+@source not "../../RECOVERY.md";
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -121,43 +126,29 @@
   }
 }
 
-/* ── Кнопка «наверх» не перекрывает открытые меню ─────────────────────────
-   Панель вариантов поиска живёт внутри sticky-секции поиска (z-30), а
-   кнопка «наверх» — z-40: на мобильном при открытой клавиатуре вьюпорт
-   сжат, панель вариантов доходит до низа видимой области — и кнопка
-   оказывалась ПОВЕРХ панели. Пока открыто любое меню (варианты поиска,
-   «Сортировка», «Параметр поиска»), кнопку прячем — плавно (transition
-   уже есть в её классах); правило вне @layer перекрывает утилиту
-   data-[show=true]:opacity-100 (приём как у cursor: pointer ниже). */
 button[data-menu-open="true"] {
   opacity: 0;
   pointer-events: none;
 }
 
-/* ── Курсор-указатель для всех кликабельных элементов ─────────────────────
-   Кроме полей ввода: у них текстовый курсор-каретка. Правила объявлены вне
-   @layer — так они перекрывают cursor-default из ui-компонентов (пункты меню
-   и списков), который живёт в слое utilities. */
 button:not(:disabled),
-[role="button"]:not(:disabled),
-[role="menuitem"]:not(:disabled),
-[role="option"]:not(:disabled),
-[role="combobox"]:not(:disabled),
-[role="tab"]:not(:disabled),
+[role="button"]:not(:disabled):not([aria-disabled="true"]),
+[role="menuitem"]:not(:disabled):not([aria-disabled="true"]),
+[role="menuitemcheckbox"]:not(:disabled):not([aria-disabled="true"]),
+[role="option"]:not(:disabled):not([aria-disabled="true"]),
+[role="combobox"]:not(:disabled):not([aria-disabled="true"]),
+[role="tab"]:not(:disabled):not([aria-disabled="true"]),
 a[href],
 summary {
   cursor: pointer;
 }
 
-/* ── Раскладка секции «Статистика»: контейнер-запрос вместо JS-замера ──────
-   Узкая раскладка (ячейки на всю ширину первой строкой, управление —
-   второй, «Сортировка» растянута) раньше включалась эффектом после
-   монтирования (замер clientWidth + setState) — на мобильных первый
-   кадр отрисовывался широким, и строки статистики/сортировки
-   перестраивались уже после загрузки. Контейнер-запрос считает ширину
-   секции прямо в CSS — до первой отрисовки, прыжка нет. Порог 620px —
-   прежний STATS_WRAP_AT; ширину секции задаёт родитель, классы детей
-   на неё не влияют — самоблокировки (осцилляции) нет. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-in {
+    animation: none;
+  }
+}
+
 .stats-sec {
   container-type: inline-size;
 }
@@ -165,64 +156,55 @@ summary {
 .stats-controls {
   width: 100%;
 }
-.stats-cell {
-  flex: 1 1 0%;
-  justify-content: center;
-}
 .stats-sort {
   flex: 1 1 0%;
   min-width: 0;
 }
-@container (min-width: 620px) {
+@container (min-width: 700px) {
   .stats-cells,
   .stats-controls {
     width: auto;
   }
+  .stats-cells {
+    width: calc(14rem + 10px + 6.875rem);
+  }
   .stats-controls {
     margin-left: auto;
   }
-  .stats-cell {
-    flex: none;
-    justify-content: flex-start;
-  }
   .stats-sort {
     flex: none;
-    width: 14rem; /* w-56 */
+    width: 14rem;
   }
 }
 
-/* ── Сохранённый вид «строки» показывается в первом кадре ────────────────
-   Оба списка команд всегда есть в статическом HTML (начальное состояние —
-   «карточки»: список строк скрыт классом hidden). Если пользователь сохранил
-   компактный вид, inline-скрипт в layout.tsx ставит data-flash-view="rows"
-   на <html> ещё до первой отрисовки — эти правила меняют списки местами:
-   строки видны сразу, из статического HTML, без ожидания гидрации (раньше
-   строки ждали загрузки JS и появлениялись с заметной задержкой, пока
-   карточки были в HTML заранее). page.tsx синхронизирует состояние и снимает
-   метку: дальше работают классы. Правила вне @layer перекрывают утилиты
-   hidden/grid/flex (приём как у cursor: pointer ниже). */
-html[data-flash-view="rows"] [data-view-cards] {
+html[data-flash-view="rows"] [data-view-cards],
+html[data-flash-view="compact"] [data-view-cards] {
   display: none;
 }
 html[data-flash-view="rows"] [data-view-rows] {
   display: flex;
-  /* В статическом HTML список строк скрыт утилитой hidden — классы его
-     «рабочего» состояния (flex flex-col gap-1.5 mt-2) в разметку НЕ входят.
-     Без этих трёх свойств первый кадр рисовал строки обычным flex-РЯДОМ —
-     горизонтально, одной широкой линией, — и лишь после гидрации они
-     перестраивались в колонку. Повторяем строчные классы дословно:
-     flex-col → column, gap-1.5 → 6px, mt-2 → 8px. */
   flex-direction: column;
   gap: 6px;
   margin-top: 8px;
 }
-/* Подсветка переключателя вида — правильная с первого кадра: статический
-   HTML отрендерен с активной «Карточками»; пока стоит метка (сохранён
-   компактный вид), эти правила перекрашивают активной кнопку «Компактный»
-   ещё ДО гидрации — раньше подсветка прыгала «Карточки → Компактный» уже
-   после загрузки страницы. Правила вне @layer перекрывают утилиты Tailwind
-   (приём как у cursor: pointer ниже); после снятия метки работают классы. */
-html[data-flash-view="rows"] .view-toggle-cards {
+html[data-flash-view="compact"] [data-view-compact] {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 8px;
+}
+@media (min-width: 640px) {
+  html[data-flash-view="compact"] [data-view-compact] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  html[data-flash-view="compact"] [data-view-compact] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+html[data-flash-view="rows"] .view-toggle-cards,
+html[data-flash-view="compact"] .view-toggle-cards {
   background-color: transparent;
   color: #9aa5b8;
 }
@@ -230,36 +212,53 @@ html[data-flash-view="rows"] .view-toggle-rows {
   background-color: #d3bc8e;
   color: #1c2333;
 }
+html[data-flash-view="compact"] .view-toggle-compact {
+  background-color: #d3bc8e;
+  color: #1c2333;
+}
 
-/* ── Рамки фокуса убраны ПОЛНОСТЬЮ ─────────────────────────────
-   Просьба пользователя (20.09): никаких рамок фокуса — ни после клика/тапа,
-   ни на Tab/стрелки. Активность видна и без них: hover/active-классы
-   кнопок, focus-within-рамка строки поиска, подсветка пунктов меню
-   (focus:bg), золотая рамка раскрытой строки. Правило вне @layer
-   перекрывает и базовый слой (outline-ring/50), и утилиты — приём как у
-   cursor: pointer. */
-:focus,
+html[data-el="off"] .ct-el {
+  display: none;
+}
+html[data-rar="off"] .ct-rar {
+  display: none;
+}
+html[data-el="off"] .ct-tail[data-halves="el"],
+html[data-rar="off"] .ct-tail[data-halves="rar"],
+html[data-el="off"][data-rar="off"] .ct-tail {
+  display: none;
+}
+
+html[data-prehide] [data-teams-count],
+html[data-prehide] [data-teams-main] {
+  visibility: hidden;
+}
+
+html[data-demo-off] [data-demo-hide] {
+  display: none;
+}
+
+.team-rotation {
+  background-color: color-mix(in oklab, #080c12 25%, transparent);
+}
+
+:focus {
+  outline: none;
+}
 :focus-visible {
+  outline: 2px solid #a68b5c;
+  outline-offset: 2px;
+}
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
   outline: none;
 }
 
-/* ── Полосы прокрутки в стиле страницы ──────────────────────────────
-   Фон html/body — цвет страницы: за прозрачной дорожкой скроллбара всегда
-   тёмное — раньше там просвечивал белый bg-background светлой темы, и полоса
-   «становилась белой». Radix-меню больше не блокируют прокрутку окна
-   (modal={false} в page.tsx): скроллбар и ~8px контента не исчезают на время
-   открытого меню.
-   Chromium/Safari (::-webkit-scrollbar): узкая (8px), ползунок — полоса
-   с полностью скруглёнными краями, при наведении — золотой; дорожка
-   прозрачная. На ВСЕХ ширинах окна (просьба 19.09): раньше правила жили в
-   @media (min-width:768px) — в узком десктопном окне и на телефонах полоса
-   становилась стандартной (широкой и без скругления).
-   Firefox (::-webkit-scrollbar не поддерживает): ползунок красится
-   стандартным scrollbar-color — его ставит инлайн-скрипт в layout.tsx
-   ТОЛЬКО в Firefox. В CSS его держать нельзя: свойство наследуется, и в
-   Chromium (121+) ненулевое значение (как и у scrollbar-width)
-   ОТКЛЮЧАЕТ webkit-правила — сборщик CSS к тому же разворачивает
-   @supports-обёртки и вливает правило в html. */
+html {
+  scrollbar-gutter: stable;
+}
+
 html,
 body {
   background-color: #141c2b;
@@ -282,4 +281,99 @@ body {
 }
 ::-webkit-scrollbar-corner {
   background: transparent;
+}
+
+.export-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+}
+.export-slider::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    #d3bc8e 0%,
+    #d3bc8e var(--grid-fill, 0%),
+    #24304a var(--grid-fill, 0%),
+    #24304a 100%
+  );
+}
+.export-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -5px;
+  border-radius: 9999px;
+  background: #d3bc8e;
+  border: 2px solid #1d2739;
+  box-shadow: 0 0 0 1px #435680;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+@media (hover: hover) {
+  .export-slider:hover::-webkit-slider-thumb {
+    background: #e0cc9e;
+    box-shadow: 0 0 0 1px #a68b5c;
+    transform: scale(1.12);
+  }
+}
+.export-slider:active::-webkit-slider-thumb {
+  background: #e0cc9e;
+  box-shadow:
+    0 0 0 1px #a68b5c,
+    0 0 0 5px rgb(211 188 142 / 22%);
+  transform: scale(0.9);
+}
+.export-slider:focus-visible::-webkit-slider-thumb {
+  box-shadow:
+    0 0 0 1px #435680,
+    0 0 0 4px rgb(211 188 142 / 30%);
+}
+.export-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background: #d3bc8e;
+  border: 2px solid #1d2739;
+  box-shadow: 0 0 0 1px #435680;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+@media (hover: hover) {
+  .export-slider:hover::-moz-range-thumb {
+    background: #e0cc9e;
+    box-shadow: 0 0 0 1px #a68b5c;
+    transform: scale(1.12);
+  }
+}
+.export-slider:active::-moz-range-thumb {
+  background: #e0cc9e;
+  box-shadow:
+    0 0 0 1px #a68b5c,
+    0 0 0 5px rgb(211 188 142 / 22%);
+  transform: scale(0.9);
+}
+.export-slider:focus-visible::-moz-range-thumb {
+  box-shadow:
+    0 0 0 1px #435680,
+    0 0 0 4px rgb(211 188 142 / 30%);
+}
+.export-slider::-moz-range-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    #d3bc8e 0%,
+    #d3bc8e var(--grid-fill, 0%),
+    #24304a var(--grid-fill, 0%),
+    #24304a 100%
+  );
 }

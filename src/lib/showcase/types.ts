@@ -1,28 +1,37 @@
-/** Типы «простого» формата showcase-simple/1 (только видимые значения листа). */
+import type { ElementKey } from "./elements";
 
-/** Значение ячейки сетки: как в xlsx (число/строка/булево/serial-дата) или строка из CSV. */
 export type Cell = string | number | boolean | null;
 
 export interface CharacterRow {
   name: string;
+  constellation?: string | null;
   damage: number | null;
   damage_share: number | null;
   field_time_s: number | null;
   weapon: string | null;
+  weapon_refinement?: number | null;
   artifact_set: string | null;
-  er_requirement: string | null;
+  er_requirement_p: number | null;
+  element?: ElementKey | null;
+  rarity?: 4 | 5 | null;
+}
+
+export interface ExtraDamage {
+  name: string;
+  damage: number | null;
+  note: string | null;
+  damage_percent?: number | null;
+  recalc_total?: boolean;
+  scale_visible?: boolean;
 }
 
 export interface TeamBlock {
-  /** Метка слота в сетке листа, напр. "R2·C1" (ряд·колонка). */
   slot: string;
-  /** Адрес якоря «Team», напр. "J14" (для xlsx; в CSV может быть null). */
   anchor: string | null;
-  /** Диапазон карточки, напр. "B14:S22" (для xlsx; в CSV может быть null). */
   range: string | null;
-  /** Имя команды, собранное из видимых имён персонажей (расчётный лист недоступен). */
   team_name: string | null;
   characters: CharacterRow[];
+  extra_damage?: ExtraDamage | null;
   total_dpr: number | null;
   dps: number | null;
   rotation_time_s: number | null;
@@ -33,7 +42,7 @@ export interface TeamBlock {
   is_empty: boolean;
 }
 
-export type SourceType = "xlsx" | "csv" | "demo";
+export type SourceType = "xlsx" | "csv" | "demo" | "favorites";
 
 export interface ShowcaseData {
   format: string;

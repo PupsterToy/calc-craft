@@ -1,17 +1,9 @@
-# Автоматическая сборка и публикация сайта на GitHub Pages.
-#
-# Что делает: при каждом `git push` GitHub сам собирает сайт из исходников
-# (ставит зависимости, прогоняет next build в статическом режиме) и публикует
-# результат на GitHub Pages. Локально ничего собирать не нужно.
-#
-# Требуется один раз включить в настройках репозитория:
-#   Settings -> Pages -> Build and deployment -> Source: GitHub Actions
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: ["main"]
-  workflow_dispatch: # позволяет запустить сборку вручную из вкладки Actions
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -26,30 +18,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout (забрать код)
+      - name: Checkout (fetch the code)
         uses: actions/checkout@v4
 
-      - name: Setup Pages (инициализировать окружение Pages)
+      - name: Setup Pages (initialize the Pages environment)
         uses: actions/configure-pages@v5
         with:
-          # Включить Pages в репозитории автоматически, если ещё не включён.
-          # Иначе первый запуск падает с "Get Pages site failed: Not Found"
-          # (до ручного переключателя Settings -> Pages -> GitHub Actions).
           enablement: true
 
-      - name: Setup Bun (установить сборщик пакетов)
+      - name: Setup Bun (install the package manager)
         uses: oven-sh/setup-bun@v2
 
-      - name: Install dependencies (поставить зависимости из bun.lock)
+      - name: Install dependencies (from bun.lock)
         run: bun install --frozen-lockfile
 
-      - name: Generate Prisma client (служебный шаг Next-проекта)
+      - name: Generate Prisma client (a Next-project service step)
         run: bun run db:generate
 
-      # Путь сайта зависит от имени репозитория:
-      #   репозиторий "showcase-teams" -> https://login.github.io/showcase-teams/
-      #   репозиторий "login.github.io" -> https://login.github.io/ (без пути)
-      # Вычисляем basePath автоматически, чтобы оба варианта работали.
       - name: Compute base path
         id: basepath
         run: |
@@ -61,12 +46,15 @@ jobs:
             echo "path=/$REPO_NAME" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Build static site (статическая сборка Next.js)
+      - name: Version service worker (inject the git SHA)
+        run: sed -i "s/__BUILD_ID__-local/${GITHUB_SHA}/" public/sw.js
+
+      - name: Build static site (Next.js static build)
         env:
           NEXT_PUBLIC_BASE_PATH: ${{ steps.basepath.outputs.path }}
         run: bun run build:static
 
-      - name: Upload artifact (передать собранный сайт в Pages)
+      - name: Upload artifact (hand the built site to Pages)
         uses: actions/upload-pages-artifact@v3
         with:
           path: .next-export

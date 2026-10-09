@@ -1,6 +1,6 @@
 {
   "format": "showcase-simple/1",
-  "source": "/home/z/my-project/download/showcase_template.xlsx",
+  "source": "showcase_template.xlsx",
   "source_type": "xlsx",
   "sheet": "Showcase",
   "extracted_at": "2026-09-17T17:42:45",
@@ -18,44 +18,58 @@
       "team_name": "Sandrone · Yae Miko · Odette · Alyosha",
       "characters": [
         {
-          "name": "C0 Sandrone",
-          "damage": 1959081.7335212512,
+          "name": "Sandrone",
+          "constellation": "C0",
+          "damage": 1959082,
           "damage_share": 0.5108812641663297,
           "field_time_s": 14.5,
           "weapon": "Melusine",
           "artifact_set": "Disenchant",
-          "er_requirement": "129% ER"
+          "weapon_refinement": 1,
+          "er_requirement_p": 129
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 1136159.109374212,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 1136159,
           "damage_share": 0.2962828922139467,
           "field_time_s": 2.0,
           "weapon": "Craft Catalyst",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "weapon_refinement": 5,
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 577831.3307837445,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 577831,
           "damage_share": 0.15068447410568936,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "weapon_refinement": 1,
+          "er_requirement_p": 100
         },
         {
-          "name": "C6 Alyosha",
-          "damage": 161638.2980742153,
+          "name": "Alyosha",
+          "constellation": "C6",
+          "damage": 161638,
           "damage_share": 0.042151369514034295,
           "field_time_s": 2.0,
           "weapon": "Fav Lance",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "182% ER"
+          "weapon_refinement": 5,
+          "er_requirement_p": 182
         }
       ],
-      "total_dpr": 3834710.4717534226,
-      "dps": 182605.26055968678,
+      "extra_damage": {
+        "name": "Reaction Damage",
+        "damage": 300000,
+        "note": "Test",
+        "damage_percent": 7.3
+      },
+      "total_dpr": 3834710,
+      "dps": 182605,
       "rotation_time_s": 21.0,
       "rotation": "Ode EE, Yae EEE, Alyo QE, Sand CECE (Q) CE",
       "extra_info": "(3 gold)\n\nALYOSHA before C6 is meh\n\nAlyosha C2 = 162k",
@@ -70,44 +84,48 @@
       "team_name": "Sandrone · Yae Miko · Odette · Escoffier",
       "characters": [
         {
-          "name": "C0 Sandrone",
-          "damage": 1833513.0564845512,
+          "name": "Sandrone",
+          "constellation": "C0",
+          "damage": 1833513,
           "damage_share": 0.48332232969208083,
           "field_time_s": 14.5,
           "weapon": "Tidal Shadow",
           "artifact_set": "Disenchant",
-          "er_requirement": "120% ER"
+          "er_requirement_p": 120
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 1118950.2197721563,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 1118950,
           "damage_share": 0.29496033590655873,
           "field_time_s": 2.0,
           "weapon": "Craft Catalyst",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 657853.1314936223,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 657853,
           "damage_share": 0.17341305914578709,
           "field_time_s": 2.5,
           "weapon": "Silver Light",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Escoffier",
-          "damage": 183245.24633807412,
+          "name": "Escoffier",
+          "constellation": "C0",
+          "damage": 183245,
           "damage_share": 0.04830427525557328,
           "field_time_s": 1.0,
           "weapon": "Fav Lance",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         }
       ],
-      "total_dpr": 3793561.654088404,
-      "dps": 189678.0827044202,
+      "total_dpr": 3793562,
+      "dps": 189678,
       "rotation_time_s": 20.0,
       "rotation": "Esco E, Yae EEE, Ode EE, Sand CECE (Q) CE",
       "extra_info": "HOW GOOD IS YAE C1 COMPARISON PART 1\n\nIf we kick Alyosha from Premium team: We chillin\n(Sand YaeC1 Ode AlyoshaC6 is 176k)",
@@ -122,44 +140,48 @@
       "team_name": "Cryo Traveller · Yae Miko · Odette · Escoffier",
       "characters": [
         {
-          "name": "C2 Cryo Traveller",
-          "damage": 1046334.1319629302,
+          "name": "Cryo Traveller",
+          "constellation": "C2",
+          "damage": 1046334,
           "damage_share": 0.4091897810235285,
           "field_time_s": 10.0,
           "weapon": "Exai",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 793605.4029132528,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 793605,
           "damage_share": 0.3103551830312153,
           "field_time_s": 2.0,
           "weapon": "Widsith",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 538239.5885807764,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 538240,
           "damage_share": 0.2104893003694586,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Escoffier",
-          "damage": 178908.5177487377,
+          "name": "Escoffier",
+          "constellation": "C0",
+          "damage": 178909,
           "damage_share": 0.06996573557579755,
           "field_time_s": 1.0,
           "weapon": "Deathmatch",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         }
       ],
-      "total_dpr": 2557087.6412056973,
-      "dps": 164973.3962068192,
+      "total_dpr": 2557088,
+      "dps": 164973,
       "rotation_time_s": 15.5,
       "rotation": "Ode EE, Yae EEE, Alyo EQ, Trav E 5N2C Q",
       "extra_info": "REALISTIC CMC at 7.0\nCMC C2\nlv90 R3 free 5 star sword",
@@ -174,44 +196,48 @@
       "team_name": "Cyno · Yae Miko · Odette · Alyosha",
       "characters": [
         {
-          "name": "C1 Cyno",
-          "damage": 1435460.963184246,
+          "name": "Cyno",
+          "constellation": "C1",
+          "damage": 1435461,
           "damage_share": 0.4793659947314559,
           "field_time_s": 16.0,
           "weapon": "Deathmatch",
           "artifact_set": "Disenchant",
-          "er_requirement": "104% ER"
+          "er_requirement_p": 104
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 961136.1497254104,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 961136,
           "damage_share": 0.3209672699586648,
           "field_time_s": 2.0,
           "weapon": "Widsith",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 474923.7479148913,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 474924,
           "damage_share": 0.1585987363500263,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C2 Alyosha",
-          "damage": 122978.0793608132,
+          "name": "Alyosha",
+          "constellation": "C2",
+          "damage": 122978,
           "damage_share": 0.041067998959852955,
           "field_time_s": 2.0,
           "weapon": "Fav Lance",
           "artifact_set": "Noblesse",
-          "er_requirement": "126% ER"
+          "er_requirement_p": 126
         }
       ],
-      "total_dpr": 2994498.940185361,
-      "dps": 133088.84178601604,
+      "total_dpr": 2994499,
+      "dps": 133089,
       "rotation_time_s": 22.5,
       "rotation": "Yae EEE, Ode EE, Alyo QE, Cyno EQ N1CD E N4CD E 2[N1CD N4E]",
       "extra_info": "ALYOSHA before C6 is trash\n\nAlyosha C6 = 149k\nOde C2 + Alyo C6 = 211k",
@@ -226,44 +252,48 @@
       "team_name": "Wriothesley · Yae Miko · Odette · Escoffier",
       "characters": [
         {
-          "name": "C1 Wriothesley",
-          "damage": 1811241.6735912832,
+          "name": "Wriothesley",
+          "constellation": "C1",
+          "damage": 1811242,
           "damage_share": 0.516864837770617,
           "field_time_s": 14.0,
           "weapon": "Widsith",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 912326.7515995887,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 912327,
           "damage_share": 0.26034605173606623,
           "field_time_s": 2.0,
           "weapon": "Widsith",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 557633.0671295661,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 557633,
           "damage_share": 0.15912891635602538,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Escoffier",
-          "damage": 223083.460402747,
+          "name": "Escoffier",
+          "constellation": "C0",
+          "damage": 223083,
           "damage_share": 0.0636601941372914,
           "field_time_s": 1.0,
           "weapon": "Deathmatch",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         }
       ],
-      "total_dpr": 3504284.952723185,
-      "dps": 179706.92065247102,
+      "total_dpr": 3504285,
+      "dps": 179707,
       "rotation_time_s": 19.5,
       "rotation": "Ode EE, Yae EEE, Esco E, Wrio N5Cd N5Cd N5Cd N2",
       "extra_info": "Wrio C0 = 168k (-6% vs. C1)\nWrio C1 = 178k (baseline) (add a N5C and 3.5s)\nWrio C2 = 219k (+23% vs. C1)\nWrio C3 = 248k (+39% vs. C1)",
@@ -278,44 +308,48 @@
       "team_name": "Sandrone · Yae Miko · Odette · Qiqi",
       "characters": [
         {
-          "name": "C0 Sandrone",
-          "damage": 1745025.9442910948,
+          "name": "Sandrone",
+          "constellation": "C0",
+          "damage": 1745026,
           "damage_share": 0.49183328785444236,
           "field_time_s": 14.5,
           "weapon": "Melusine",
           "artifact_set": "Disenchant",
-          "er_requirement": "125% ER"
+          "er_requirement_p": 125
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 1197473.190070335,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 1197473,
           "damage_share": 0.3375062577818007,
           "field_time_s": 2.0,
           "weapon": "Craft Catalyst",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 583760.3918847593,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 583760,
           "damage_share": 0.16453210555360342,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Qiqi",
-          "damage": 21743.39950846983,
+          "name": "Qiqi",
+          "constellation": "C0",
+          "damage": 21743,
           "damage_share": 0.006128348810153536,
           "field_time_s": 1.0,
           "weapon": "Fav Sword",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         }
       ],
-      "total_dpr": 3548002.925754659,
-      "dps": 177400.14628773293,
+      "total_dpr": 3548003,
+      "dps": 177400,
       "rotation_time_s": 20.0,
       "rotation": "Yae EEE, Qiqi E, Ode EE, Sand CECE (Q) CE",
       "extra_info": "Qiqi instead of Alyosha\n\nOdette C2 = +43% tdps (this team has 0 shred)",
@@ -330,44 +364,48 @@
       "team_name": "Sandrone · Yae Miko · Escoffier · Alyosha",
       "characters": [
         {
-          "name": "C0 Sandrone",
-          "damage": 1700525.3368693742,
+          "name": "Sandrone",
+          "constellation": "C0",
+          "damage": 1700525,
           "damage_share": 0.6211181741883739,
           "field_time_s": 13.5,
           "weapon": "Craft Claymore",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 692648.1637551958,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 692648,
           "damage_share": 0.25299026924148915,
           "field_time_s": 2.0,
           "weapon": "Widsith",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Escoffier",
-          "damage": 180323.48919475,
+          "name": "Escoffier",
+          "constellation": "C0",
+          "damage": 180323,
           "damage_share": 0.06586329173907718,
           "field_time_s": 1.0,
           "weapon": "Deathmatch",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C6 Alyosha",
-          "damage": 164348.08948701457,
+          "name": "Alyosha",
+          "constellation": "C6",
+          "damage": 164348,
           "damage_share": 0.06002826483105981,
           "field_time_s": 2.0,
           "weapon": "Fav Lance",
           "artifact_set": "Noblesse",
-          "er_requirement": "126% ER"
+          "er_requirement_p": 126
         }
       ],
-      "total_dpr": 2737845.0793063343,
-      "dps": 147991.6259084505,
+      "total_dpr": 2737845,
+      "dps": 147992,
       "rotation_time_s": 18.5,
       "rotation": "Esco E, Yae EEE, Alyo EQ, Sand CECE (Q) CE",
       "extra_info": "HOW GOOD IS YAE C1 COMPARISON PART 2\n\nIf we kick Odette from Premium team: Rough one\n(Sand YaeC1 Ode AlyoshaC6 is 176k)",
@@ -382,44 +420,48 @@
       "team_name": "Cryo Traveller · Yae Miko · Odette · Escoffier",
       "characters": [
         {
-          "name": "C6 Cryo Traveller",
-          "damage": 1176937.765233467,
+          "name": "Cryo Traveller",
+          "constellation": "C6",
+          "damage": 1176938,
           "damage_share": 0.4155576463980115,
           "field_time_s": 10.0,
           "weapon": "Exai",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 860500.698613311,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 860501,
           "damage_share": 0.30382884771197577,
           "field_time_s": 2.0,
           "weapon": "Widsith",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 615841.9467877762,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 615842,
           "damage_share": 0.2174438084324125,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Escoffier",
-          "damage": 178908.5177487377,
+          "name": "Escoffier",
+          "constellation": "C0",
+          "damage": 178909,
           "damage_share": 0.06316969745760029,
           "field_time_s": 1.0,
           "weapon": "Deathmatch",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         }
       ],
-      "total_dpr": 2832188.9283832917,
-      "dps": 182721.86634730914,
+      "total_dpr": 2832189,
+      "dps": 182722,
       "rotation_time_s": 15.5,
       "rotation": "Ode EE, Yae EEE, Alyo EQ, Trav E 5N2C Q",
       "extra_info": "LIKELY ONLY AVAILABLE FROM 7.3\nCMC C6\nlv90 R5 free 5 star sword",
@@ -434,44 +476,48 @@
       "team_name": "Cyno · Yae Miko · Odette · Sucrose",
       "characters": [
         {
-          "name": "C1 Cyno",
-          "damage": 1441939.3353319194,
+          "name": "Cyno",
+          "constellation": "C1",
+          "damage": 1441939,
           "damage_share": 0.45430448170533017,
           "field_time_s": 16.0,
           "weapon": "Deathmatch",
           "artifact_set": "Disenchant",
-          "er_requirement": "141% ER"
+          "er_requirement_p": 141
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 1216406.1129642148,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 1216406,
           "damage_share": 0.38324687811238317,
           "field_time_s": 2.0,
           "weapon": "Widsith",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 504551.3343854618,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 504551,
           "damage_share": 0.15896641893672728,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C6 Sucrose",
-          "damage": 11052.393252764305,
+          "name": "Sucrose",
+          "constellation": "C6",
+          "damage": 11052,
           "damage_share": 0.0034822212455593764,
           "field_time_s": 1.5,
           "weapon": "TTDS",
           "artifact_set": "Viridescent",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         }
       ],
-      "total_dpr": 3173949.1759343604,
-      "dps": 144270.41708792548,
+      "total_dpr": 3173949,
+      "dps": 144270,
       "rotation_time_s": 22.0,
       "rotation": "Ode EE, Yae EEE, Suc E, Cyno EQ N1CD E N4 E 2[N4CD N1CD E]",
       "extra_info": null,
@@ -486,44 +532,48 @@
       "team_name": "Wriothesley · Beidou · Odette · Escoffier",
       "characters": [
         {
-          "name": "C2 Wriothesley",
-          "damage": 2945188.277602087,
+          "name": "Wriothesley",
+          "constellation": "C2",
+          "damage": 2945188,
           "damage_share": 0.7825201376727159,
           "field_time_s": 14.0,
           "weapon": "Widsith",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C6 Beidou",
-          "damage": 70592.06857598289,
+          "name": "Beidou",
+          "constellation": "C6",
+          "damage": 70592,
           "damage_share": 0.018755919830583802,
           "field_time_s": 2.5,
           "weapon": "Fav GS",
           "artifact_set": "Noblesse",
-          "er_requirement": "261% ER"
+          "er_requirement_p": 261
         },
         {
-          "name": "C0 Odette",
-          "damage": 496982.82585052605,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 496983,
           "damage_share": 0.13204557150490998,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Escoffier",
-          "damage": 250958.8535301805,
+          "name": "Escoffier",
+          "constellation": "C0",
+          "damage": 250959,
           "damage_share": 0.06667837099179029,
           "field_time_s": 1.0,
           "weapon": "Deathmatch",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         }
       ],
-      "total_dpr": 3763722.025558776,
-      "dps": 188186.1012779388,
+      "total_dpr": 3763722,
+      "dps": 188186,
       "rotation_time_s": 20.0,
       "rotation": "Ode EE, Esco E, Beidou hE(1)Q, Wrio N5Cd N5Cd N5Cd N2",
       "extra_info": "What if we skip Yae to get 1 more Wrio cons?\n\nWrio C3 = 219k (+16% vs. C2)",
@@ -538,44 +588,48 @@
       "team_name": "Sandrone · Yae Miko · Odette · Escoffier",
       "characters": [
         {
-          "name": "C0 Sandrone",
-          "damage": 1833513.0564845512,
+          "name": "Sandrone",
+          "constellation": "C0",
+          "damage": 1833513,
           "damage_share": 0.48332232969208083,
           "field_time_s": 14.5,
           "weapon": "Tidal Shadow",
           "artifact_set": "Disenchant",
-          "er_requirement": "120% ER"
+          "er_requirement_p": 120
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 1118950.2197721563,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 1118950,
           "damage_share": 0.29496033590655873,
           "field_time_s": 2.0,
           "weapon": "Craft Catalyst",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 657853.1314936223,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 657853,
           "damage_share": 0.17341305914578709,
           "field_time_s": 2.5,
           "weapon": "Silver Light",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Escoffier",
-          "damage": 183245.24633807412,
+          "name": "Escoffier",
+          "constellation": "C0",
+          "damage": 183245,
           "damage_share": 0.04830427525557328,
           "field_time_s": 1.0,
           "weapon": "Fav Lance",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         }
       ],
-      "total_dpr": 3793561.654088404,
-      "dps": 189678.0827044202,
+      "total_dpr": 3793562,
+      "dps": 189678,
       "rotation_time_s": 20.0,
       "rotation": "Esco E, Yae EEE, Ode EE, Sand CECE (Q) CE",
       "extra_info": "Escoffier instead of Alyosha\n\nOdette C2 = +37% tdps (this team has 15% Esco Cryo shred)",
@@ -590,44 +644,48 @@
       "team_name": "Sandrone · Escoffier · Odette · Alyosha",
       "characters": [
         {
-          "name": "C0 Sandrone",
-          "damage": 2034581.9605981125,
+          "name": "Sandrone",
+          "constellation": "C0",
+          "damage": 2034582,
           "damage_share": 0.6260428823729586,
           "field_time_s": 14.5,
           "weapon": "Tidal Shadow",
           "artifact_set": "Disenchant",
-          "er_requirement": "130% ER"
+          "er_requirement_p": 130
         },
         {
-          "name": "C0 Escoffier",
-          "damage": 211990.15365419237,
+          "name": "Escoffier",
+          "constellation": "C0",
+          "damage": 211990,
           "damage_share": 0.06522958003094766,
           "field_time_s": 2.0,
           "weapon": "Deathmatch",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 856753.990038683,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 856754,
           "damage_share": 0.2636240504416314,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C6 Alyosha",
-          "damage": 146582.19733559492,
+          "name": "Alyosha",
+          "constellation": "C6",
+          "damage": 146582,
           "damage_share": 0.04510348715446228,
           "field_time_s": 2.0,
           "weapon": "Fav Lance",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "126% ER"
+          "er_requirement_p": 126
         }
       ],
-      "total_dpr": 3249908.301626583,
-      "dps": 154757.53817269445,
+      "total_dpr": 3249908,
+      "dps": 154758,
       "rotation_time_s": 21.0,
       "rotation": "Esco E, Alyo EQ, Ode EE, Sand CECE (Q) CE",
       "extra_info": "HOW GOOD IS YAE C1 COMPARISON PART 2\n\nIf we kick Yae from Premium team: Rough one\n(Sand YaeC1 Ode AlyoshaC6 is 176k)",
@@ -642,44 +700,48 @@
       "team_name": "Cryo Traveller · Yae Miko · Odette · Alyosha",
       "characters": [
         {
-          "name": "C2 Cryo Traveller",
-          "damage": 949660.5602293615,
+          "name": "Cryo Traveller",
+          "constellation": "C2",
+          "damage": 949661,
           "damage_share": 0.42975334908190804,
           "field_time_s": 9.5,
           "weapon": "Exai",
           "artifact_set": "Disenchant",
-          "er_requirement": "106% ER"
+          "er_requirement_p": 106
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 725412.5203319062,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 725413,
           "damage_share": 0.32827356756111997,
           "field_time_s": 2.0,
           "weapon": "Widsith",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 459605.8871824617,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 459606,
           "damage_share": 0.20798712460662813,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C2 Alyosha",
-          "damage": 75101.50809931711,
+          "name": "Alyosha",
+          "constellation": "C2",
+          "damage": 75102,
           "damage_share": 0.03398595875034391,
           "field_time_s": 1.5,
           "weapon": "Fav Lance",
           "artifact_set": "Noblesse",
-          "er_requirement": "132% ER"
+          "er_requirement_p": 132
         }
       ],
-      "total_dpr": 2209780.4758430463,
-      "dps": 142566.4823124546,
+      "total_dpr": 2209780,
+      "dps": 142566,
       "rotation_time_s": 15.5,
       "rotation": "Ode EE, Yae EEE, Alyo E(Q), Trav E 4N2C Q",
       "extra_info": "Alyosha before C6 is trash\nCMC C2\nlv90 R3 free 5 star sword\n\nAlyosha C6 = 159k",
@@ -694,44 +756,48 @@
       "team_name": "Cyno · Qiqi · Odette · Alyosha",
       "characters": [
         {
-          "name": "C1 Cyno",
-          "damage": 1369222.034197893,
+          "name": "Cyno",
+          "constellation": "C1",
+          "damage": 1369222,
           "damage_share": 0.6843489060214214,
           "field_time_s": 16.0,
           "weapon": "Deathmatch",
           "artifact_set": "Disenchant",
-          "er_requirement": "112% ER"
+          "er_requirement_p": 112
         },
         {
-          "name": "C0 Qiqi",
-          "damage": 18756.181718476833,
+          "name": "Qiqi",
+          "constellation": "C0",
+          "damage": 18756,
           "damage_share": 0.009374500350995268,
           "field_time_s": 1.0,
           "weapon": "Fav Sword",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 498058.81774245435,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 498059,
           "damage_share": 0.248934065143089,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C2 Alyosha",
-          "damage": 114728.98225855042,
+          "name": "Alyosha",
+          "constellation": "C2",
+          "damage": 114729,
           "damage_share": 0.05734252848449439,
           "field_time_s": 2.0,
           "weapon": "Fav Lance",
           "artifact_set": "Noblesse",
-          "er_requirement": "126% ER"
+          "er_requirement_p": 126
         }
       ],
-      "total_dpr": 2000766.0159173745,
-      "dps": 93058.88446127324,
+      "total_dpr": 2000766,
+      "dps": 93059,
       "rotation_time_s": 21.5,
       "rotation": "Ode EE, Qiqi E, Alyo QE, Cyno EQ N1CD E N4 E 2[N4CD N1CD E]",
       "extra_info": "No Yae",
@@ -746,44 +812,48 @@
       "team_name": "Skirk · Yae Miko · Odette · Escoffier",
       "characters": [
         {
-          "name": "C0 Skirk",
-          "damage": 635529.9427861092,
+          "name": "Skirk",
+          "constellation": "C0",
+          "damage": 635530,
           "damage_share": 0.2532515947362332,
           "field_time_s": 13.0,
           "weapon": "Finale",
           "artifact_set": "Finale",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 1021936.2533097181,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 1021936,
           "damage_share": 0.4072302002559777,
           "field_time_s": 2.0,
           "weapon": "Widsith",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 621351.349422423,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 621351,
           "damage_share": 0.24760158340123847,
           "field_time_s": 3.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Escoffier",
-          "damage": 230662.9710724816,
+          "name": "Escoffier",
+          "constellation": "C0",
+          "damage": 230663,
           "damage_share": 0.09191662160655067,
           "field_time_s": 2.0,
           "weapon": "Deathmatch",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         }
       ],
-      "total_dpr": 2509480.5165907317,
-      "dps": 122413.68373613326,
+      "total_dpr": 2509481,
+      "dps": 122414,
       "rotation_time_s": 20.5,
       "rotation": "Esco EQ, Yae EEE, Ode EE, Skirk 222Q 225 22C 223",
       "extra_info": "Normie Skirk combo\n\nAlternate Esco Q and Odette Q just to fill time due to Skirk E cooldown",
@@ -798,44 +868,48 @@
       "team_name": "Sandrone · Escoffier · Odette · Alyosha",
       "characters": [
         {
-          "name": "C0 Sandrone",
-          "damage": 1657060.2166365539,
+          "name": "Sandrone",
+          "constellation": "C0",
+          "damage": 1657060,
           "damage_share": 0.6154937466577416,
           "field_time_s": 13.5,
           "weapon": "Tidal Shadow",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Escoffier",
-          "damage": 187968.12198587856,
+          "name": "Escoffier",
+          "constellation": "C0",
+          "damage": 187968,
           "damage_share": 0.06981834606357158,
           "field_time_s": 2.0,
           "weapon": "Deathmatch",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 725002.8345088088,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 725003,
           "damage_share": 0.2692929963975973,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C2 Alyosha",
-          "damage": 122214.24062760445,
+          "name": "Alyosha",
+          "constellation": "C2",
+          "damage": 122214,
           "damage_share": 0.04539491088108939,
           "field_time_s": 2.0,
           "weapon": "Fav Lance",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "126% ER"
+          "er_requirement_p": 126
         }
       ],
-      "total_dpr": 2692245.413758846,
-      "dps": 134612.2706879423,
+      "total_dpr": 2692245,
+      "dps": 134612,
       "rotation_time_s": 20.0,
       "rotation": "Esco E, Alyo EQ, Ode EE, Sand CECE (Q) CE",
       "extra_info": "Realistic team without Yae\n(Alyo C2)",
@@ -850,44 +924,48 @@
       "team_name": "Sandrone · Cryo Traveller · Odette · Sucrose",
       "characters": [
         {
-          "name": "C0 Sandrone",
-          "damage": 1246300.3410028047,
+          "name": "Sandrone",
+          "constellation": "C0",
+          "damage": 1246300,
           "damage_share": 0.47392342887605504,
           "field_time_s": 10.5,
           "weapon": "Mailed",
           "artifact_set": "Proof",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C2 Cryo Traveller",
-          "damage": 735649.9879362518,
+          "name": "Cryo Traveller",
+          "constellation": "C2",
+          "damage": 735650,
           "damage_share": 0.27974136992921866,
           "field_time_s": 3.5,
           "weapon": "Exai",
           "artifact_set": "Tenacity",
-          "er_requirement": "120% ER"
+          "er_requirement_p": 120
         },
         {
-          "name": "C0 Odette",
-          "damage": 626794.0890196986,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 626794,
           "damage_share": 0.23834736627644904,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C2 Sucrose",
-          "damage": 21006.01231328158,
+          "name": "Sucrose",
+          "constellation": "C2",
+          "damage": 21006,
           "damage_share": 0.007987834918277243,
           "field_time_s": 2.5,
           "weapon": "Sac Frags",
           "artifact_set": "Viridescent",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         }
       ],
-      "total_dpr": 2629750.4302720367,
-      "dps": 138407.9173827388,
+      "total_dpr": 2629750,
+      "dps": 138408,
       "rotation_time_s": 19.0,
       "rotation": "Ode EE, CMC EQN1C, Suc E/Q, Sand CECE (Q), Suc E",
       "extra_info": "Sandrone Stellar Swirl\nEqual Mizuki C1\n\nOdette C2 = +37% tdps (this team has 40% Cryo shred)",
@@ -902,44 +980,48 @@
       "team_name": "Cryo Traveller · Qiqi · Odette · Alyosha",
       "characters": [
         {
-          "name": "C2 Cryo Traveller",
-          "damage": 1014247.6835196202,
+          "name": "Cryo Traveller",
+          "constellation": "C2",
+          "damage": 1014248,
           "damage_share": 0.569141006604326,
           "field_time_s": 9.5,
           "weapon": "Exai",
           "artifact_set": "Disenchant",
-          "er_requirement": "106% ER"
+          "er_requirement_p": 106
         },
         {
-          "name": "C0 Qiqi",
-          "damage": 17246.24939178391,
+          "name": "Qiqi",
+          "constellation": "C0",
+          "damage": 17246,
           "damage_share": 0.009677663452902784,
           "field_time_s": 1.0,
           "weapon": "Fav Sword",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 677296.4029491033,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 677296,
           "damage_share": 0.38006215129451154,
           "field_time_s": 3.5,
           "weapon": "Finale",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C2 Alyosha",
-          "damage": 73277.15137071589,
+          "name": "Alyosha",
+          "constellation": "C2",
+          "damage": 73277,
           "damage_share": 0.041119178648259674,
           "field_time_s": 1.5,
           "weapon": "Fav Lance",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "132% ER"
+          "er_requirement_p": 132
         }
       ],
-      "total_dpr": 1782067.4872312234,
-      "dps": 114972.0959504015,
+      "total_dpr": 1782067,
+      "dps": 114972,
       "rotation_time_s": 15.5,
       "rotation": "Alyo E(Q), Qiqi E, Ode Q/E E, Trav E 4N2C Q",
       "extra_info": "-------------------------------",
@@ -954,44 +1036,48 @@
       "team_name": "Cyno · Qiqi · Odette · Alyosha",
       "characters": [
         {
-          "name": "C1 Cyno",
-          "damage": 2180849.4667580957,
+          "name": "Cyno",
+          "constellation": "C1",
+          "damage": 2180849,
           "damage_share": 0.6515186634974208,
           "field_time_s": 16.0,
           "weapon": "Deathmatch",
           "artifact_set": "Disenchant",
-          "er_requirement": "112% ER"
+          "er_requirement_p": 112
         },
         {
-          "name": "C0 Qiqi",
-          "damage": 25038.30678394073,
+          "name": "Qiqi",
+          "constellation": "C0",
+          "damage": 25038,
           "damage_share": 0.007480078024991412,
           "field_time_s": 1.0,
           "weapon": "Fav Sword",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C2 Odette",
-          "damage": 957910.4079525569,
+          "name": "Odette",
+          "constellation": "C2",
+          "damage": 957910,
           "damage_share": 0.28617129162392807,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C6 Alyosha",
-          "damage": 183534.11908919344,
+          "name": "Alyosha",
+          "constellation": "C6",
+          "damage": 183534,
           "damage_share": 0.054829966853659685,
           "field_time_s": 2.0,
           "weapon": "Fav Lance",
           "artifact_set": "Noblesse",
-          "er_requirement": "126% ER"
+          "er_requirement_p": 126
         }
       ],
-      "total_dpr": 3347332.300583787,
-      "dps": 155689.87444575754,
+      "total_dpr": 3347332,
+      "dps": 155690,
       "rotation_time_s": 21.5,
       "rotation": "Ode EE, Qiqi E, Alyo QE, Cyno EQ N1CD E N4 E 2[N4CD N1CD E]",
       "extra_info": "What if we skip Yae to all in Odette C2 and get Alyosha C6? (4 gold)",
@@ -1006,44 +1092,48 @@
       "team_name": "Skirk · Yae Miko · Odette · Qiqi",
       "characters": [
         {
-          "name": "C0 Skirk",
-          "damage": 598291.6380009084,
+          "name": "Skirk",
+          "constellation": "C0",
+          "damage": 598292,
           "damage_share": 0.23992737645590512,
           "field_time_s": 13.0,
           "weapon": "Finale",
           "artifact_set": "Finale",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 1125461.6652435146,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 1125462,
           "damage_share": 0.45133350943333855,
           "field_time_s": 2.0,
           "weapon": "Widsith",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 630453.3716178285,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 630453,
           "damage_share": 0.2528248998021525,
           "field_time_s": 3.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Qiqi",
-          "damage": 139429.71977762828,
+          "name": "Qiqi",
+          "constellation": "C0",
+          "damage": 139430,
           "damage_share": 0.055914214308603764,
           "field_time_s": 2.0,
           "weapon": "Fav Sword",
           "artifact_set": "Tenacity",
-          "er_requirement": "113% ER"
+          "er_requirement_p": 113
         }
       ],
-      "total_dpr": 2493636.39463988,
-      "dps": 121640.79973853072,
+      "total_dpr": 2493636,
+      "dps": 121641,
       "rotation_time_s": 20.5,
       "rotation": "Qiqi EQ, Yae EEE, Ode EE, Skirk 222Q 225 22C 223",
       "extra_info": "Normie Skirk combo\n\nAlternate Qiqi Q and Odette Q just to fill time due to Skirk E cooldown",
@@ -1058,44 +1148,48 @@
       "team_name": "Sandrone · Escoffier · Odette · Alyosha",
       "characters": [
         {
-          "name": "C0 Sandrone",
-          "damage": 2567955.2222835557,
+          "name": "Sandrone",
+          "constellation": "C0",
+          "damage": 2567955,
           "damage_share": 0.5914863242938556,
           "field_time_s": 13.5,
           "weapon": "Craft Claymore",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Escoffier",
-          "damage": 242593.34943914507,
+          "name": "Escoffier",
+          "constellation": "C0",
+          "damage": 242593,
           "damage_share": 0.05587739510126491,
           "field_time_s": 2.0,
           "weapon": "Deathmatch",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C2 Odette",
-          "damage": 1335732.0020403205,
+          "name": "Odette",
+          "constellation": "C2",
+          "damage": 1335732,
           "damage_share": 0.3076639363773385,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C6 Alyosha",
-          "damage": 195248.7512797886,
+          "name": "Alyosha",
+          "constellation": "C6",
+          "damage": 195249,
           "damage_share": 0.04497234422754091,
           "field_time_s": 2.0,
           "weapon": "Fav Lance",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "126% ER"
+          "er_requirement_p": 126
         }
       ],
-      "total_dpr": 4341529.32504281,
-      "dps": 217076.46625214053,
+      "total_dpr": 4341529,
+      "dps": 217076,
       "rotation_time_s": 20.0,
       "rotation": "Esco E, Alyo EQ, Ode EE, Sand CECE (Q) CE",
       "extra_info": "What if we skip Yae to all in Odette C2 and get Alyosha C6? (4 gold)",
@@ -1110,44 +1204,48 @@
       "team_name": "Mizuki · Cryo Traveller · Odette · Faruzan",
       "characters": [
         {
-          "name": "C6 Mizuki",
-          "damage": 2361078.1546488944,
+          "name": "Mizuki",
+          "constellation": "C6",
+          "damage": 2361078,
           "damage_share": 0.5751959292216684,
           "field_time_s": 10.5,
           "weapon": "Widsith",
           "artifact_set": "Proof",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C2 Cryo Traveller",
-          "damage": 881288.6669059552,
+          "name": "Cryo Traveller",
+          "constellation": "C2",
+          "damage": 881289,
           "damage_share": 0.21469583828701222,
           "field_time_s": 3.5,
           "weapon": "Exai",
           "artifact_set": "Tenacity",
-          "er_requirement": "108% ER"
+          "er_requirement_p": 108
         },
         {
-          "name": "C0 Odette",
-          "damage": 730764.4446454489,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 730764,
           "damage_share": 0.17802576037238432,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C6 Faruzan",
-          "damage": 131692.90709280645,
+          "name": "Faruzan",
+          "constellation": "C6",
+          "damage": 131693,
           "damage_share": 0.032082472118934995,
           "field_time_s": 3.0,
           "weapon": "Fav Bow",
           "artifact_set": "Viridescent",
-          "er_requirement": "202% ER"
+          "er_requirement_p": 202
         }
       ],
-      "total_dpr": 4104824.1732931053,
-      "dps": 210503.80375862078,
+      "total_dpr": 4104824,
+      "dps": 210504,
       "rotation_time_s": 19.5,
       "rotation": "CMC EQN1C, Ode EE, Faru EQ, Mizuki EQ, Faru C",
       "extra_info": "1 COST MIZUKI WAHHHH\nC2 CMC, lv90 R3 free 5 star sword\n\nC0 Mizuki = 132k\nC1 Mizuki = 143k\nC2 Mizuki = 154k\nC3-C4-C5 Mizuki = 156k\nC6 Mizuki = 210k",
@@ -1162,44 +1260,48 @@
       "team_name": "Cryo Traveller · Qiqi · Odette · Alyosha",
       "characters": [
         {
-          "name": "C2 Cryo Traveller",
-          "damage": 1618318.2667698828,
+          "name": "Cryo Traveller",
+          "constellation": "C2",
+          "damage": 1618318,
           "damage_share": 0.48089283090104185,
           "field_time_s": 12.0,
           "weapon": "Exai",
           "artifact_set": "Disenchant",
-          "er_requirement": "106% ER"
+          "er_requirement_p": 106
         },
         {
-          "name": "C0 Qiqi",
-          "damage": 23546.844971627797,
+          "name": "Qiqi",
+          "constellation": "C0",
+          "damage": 23547,
           "damage_share": 0.006997084053061735,
           "field_time_s": 2.0,
           "weapon": "Fav Sword",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C2 Odette",
-          "damage": 1539721.9343800242,
+          "name": "Odette",
+          "constellation": "C2",
+          "damage": 1539722,
           "damage_share": 0.4575374665345264,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C6 Alyosha",
-          "damage": 183649.78583053115,
+          "name": "Alyosha",
+          "constellation": "C6",
+          "damage": 183650,
           "damage_share": 0.05457261851136991,
           "field_time_s": 2.0,
           "weapon": "Fav Lance",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "132% ER"
+          "er_requirement_p": 132
         }
       ],
-      "total_dpr": 3365236.831952066,
-      "dps": 181904.69361903062,
+      "total_dpr": 3365237,
+      "dps": 181905,
       "rotation_time_s": 18.5,
       "rotation": "Alyo EQ, Qiqi E, Ode EE, Trav E 5N2C Q",
       "extra_info": "What if we skip Yae to all in Odette C2 and get Alyosha C6? (3 gold)\n\nCMC C2\nlv90 R3 free 5 star sword",
@@ -1214,44 +1316,48 @@
       "team_name": "Sucrose · Yae Miko · Odette · Alyosha",
       "characters": [
         {
-          "name": "C6 Sucrose",
-          "damage": 20826.781152319836,
+          "name": "Sucrose",
+          "constellation": "C6",
+          "damage": 20827,
           "damage_share": 0.009349699446310528,
           "field_time_s": 3.0,
           "weapon": "Sac Frags",
           "artifact_set": "Viridescent",
-          "er_requirement": "104% ER"
+          "er_requirement_p": 104
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 1474844.004513309,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 1474844,
           "damage_share": 0.6620969448683399,
           "field_time_s": 12.5,
           "weapon": "Widsith",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 574725.3858365362,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 574725,
           "damage_share": 0.2580096070744915,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C2 Alyosha",
-          "damage": 157138.65696103903,
+          "name": "Alyosha",
+          "constellation": "C2",
+          "damage": 157139,
           "damage_share": 0.07054374861085802,
           "field_time_s": 2.0,
           "weapon": "Fav Lance",
           "artifact_set": "Noblesse",
-          "er_requirement": "126% ER"
+          "er_requirement_p": 126
         }
       ],
-      "total_dpr": 2227534.828463204,
-      "dps": 111376.74142316022,
+      "total_dpr": 2227535,
+      "dps": 111377,
       "rotation_time_s": 20.0,
       "rotation": "Yae EEE, Ode EE, Alyo EQ, Suc E/QN1, Yae 2N2C EE N2C, Suc E",
       "extra_info": "Yae On-field",
@@ -1266,44 +1372,48 @@
       "team_name": "Skirk · Furina · Mona · Escoffier",
       "characters": [
         {
-          "name": "C0 Skirk",
-          "damage": 1717739.9443789383,
+          "name": "Skirk",
+          "constellation": "C0",
+          "damage": 1717740,
           "damage_share": 0.6835695684151071,
           "field_time_s": 13.0,
           "weapon": "Finale",
           "artifact_set": "Finale",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Furina",
-          "damage": 462339.90462204564,
+          "name": "Furina",
+          "constellation": "C0",
+          "damage": 462340,
           "damage_share": 0.18398680783885518,
           "field_time_s": 3.0,
           "weapon": "Fav Sword",
           "artifact_set": "Tenacity",
-          "er_requirement": "189% ER"
+          "er_requirement_p": 189
         },
         {
-          "name": "C0 Mona",
-          "damage": 57452.41014709264,
+          "name": "Mona",
+          "constellation": "C0",
+          "damage": 57452,
           "damage_share": 0.022863017965653223,
           "field_time_s": 3.0,
           "weapon": "TTDS",
           "artifact_set": "Noblesse",
-          "er_requirement": "204% ER"
+          "er_requirement_p": 204
         },
         {
-          "name": "C0 Escoffier",
-          "damage": 275364.77979063895,
+          "name": "Escoffier",
+          "constellation": "C0",
+          "damage": 275365,
           "damage_share": 0.10958060578038452,
           "field_time_s": 3.0,
           "weapon": "Fav Lance",
           "artifact_set": "Scroll",
-          "er_requirement": "164% ER"
+          "er_requirement_p": 164
         }
       ],
-      "total_dpr": 2512897.0389387156,
-      "dps": 114222.59267903253,
+      "total_dpr": 2512897,
+      "dps": 114223,
       "rotation_time_s": 22.0,
       "rotation": "Fu EQ, Esco EQ, Mona EQ, Skirk 222Q 225 22C 223",
       "extra_info": "Normie Skirk combo",
@@ -1318,44 +1428,48 @@
       "team_name": "Sandrone · Yae Miko · Odette · Alyosha",
       "characters": [
         {
-          "name": "C0 Sandrone",
-          "damage": 2661665.8509398373,
+          "name": "Sandrone",
+          "constellation": "C0",
+          "damage": 2661666,
           "damage_share": 0.49643856848002876,
           "field_time_s": 14.5,
           "weapon": "Melusine",
           "artifact_set": "Disenchant",
-          "er_requirement": "129% ER"
+          "er_requirement_p": 129
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 1445669.452815556,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 1445669,
           "damage_share": 0.26963793122177426,
           "field_time_s": 2.0,
           "weapon": "Widsith",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C2 Odette",
-          "damage": 1049801.2132832985,
+          "name": "Odette",
+          "constellation": "C2",
+          "damage": 1049801,
           "damage_share": 0.19580286959271587,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C6 Alyosha",
-          "damage": 204384.56519550097,
+          "name": "Alyosha",
+          "constellation": "C6",
+          "damage": 204385,
           "damage_share": 0.03812063070548109,
           "field_time_s": 2.0,
           "weapon": "Fav Lance",
           "artifact_set": "Noblesse",
-          "er_requirement": "126% ER"
+          "er_requirement_p": 126
         }
       ],
-      "total_dpr": 5361521.082234193,
-      "dps": 255310.52772543774,
+      "total_dpr": 5361521,
+      "dps": 255311,
       "rotation_time_s": 21.0,
       "rotation": "Esco E, Alyo EQ, Ode EE, Sand CECE (Q) CE",
       "extra_info": "Yae C1 and Odette C2\n(5 gold)",
@@ -1370,44 +1484,48 @@
       "team_name": "Mizuki · Qiqi · Cryo Traveller · Sucrose",
       "characters": [
         {
-          "name": "C6 Mizuki",
-          "damage": 2249667.22461084,
+          "name": "Mizuki",
+          "constellation": "C6",
+          "damage": 2249667,
           "damage_share": 0.7276651492427861,
           "field_time_s": 10.5,
           "weapon": "Widsith",
           "artifact_set": "Proof",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Qiqi",
-          "damage": 44050.817466149565,
+          "name": "Qiqi",
+          "constellation": "C0",
+          "damage": 44051,
           "damage_share": 0.014248438309055856,
           "field_time_s": 1.0,
           "weapon": "Fav Sword",
           "artifact_set": "Tenacity",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C2 Cryo Traveller",
-          "damage": 758881.5734055045,
+          "name": "Cryo Traveller",
+          "constellation": "C2",
+          "damage": 758882,
           "damage_share": 0.2454637145123726,
           "field_time_s": 3.5,
           "weapon": "Exai",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "120% ER"
+          "er_requirement_p": 120
         },
         {
-          "name": "C6 Sucrose",
-          "damage": 39024.639096498184,
+          "name": "Sucrose",
+          "constellation": "C6",
+          "damage": 39025,
           "damage_share": 0.012622697935785356,
           "field_time_s": 2.5,
           "weapon": "Sac Frags",
           "artifact_set": "Viridescent",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         }
       ],
-      "total_dpr": 3091624.2545789923,
-      "dps": 176664.24311879955,
+      "total_dpr": 3091624,
+      "dps": 176664,
       "rotation_time_s": 17.5,
       "rotation": "Qiqi E, CMC EQ, Suc E/Q, Mizuki EQ, CMC N1C, Suc E",
       "extra_info": "0 COST MIZUKI WAHHHH\nC2 CMC, lv90 R3 free 5 star sword\nFaruzan is weird since 19s cd\nC0 Mizuki = 86k\nC1 Mizuki = 101k\nC2 Mizuki = 115k\nC3 Mizuki = 116k\nC4-C5 Mizuki = 118k\nC6 Mizuki = 154k",
@@ -1422,44 +1540,48 @@
       "team_name": "Cryo Traveller · Yae Miko · Odette · Alyosha",
       "characters": [
         {
-          "name": "C2 Cryo Traveller",
-          "damage": 1591364.735177891,
+          "name": "Cryo Traveller",
+          "constellation": "C2",
+          "damage": 1591365,
           "damage_share": 0.3803812764385817,
           "field_time_s": 12.0,
           "weapon": "Exai",
           "artifact_set": "Disenchant",
-          "er_requirement": "106% ER"
+          "er_requirement_p": 106
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 1239333.8050893724,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 1239334,
           "damage_share": 0.29623590638426595,
           "field_time_s": 2.0,
           "weapon": "Widsith",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C2 Odette",
-          "damage": 1159197.9295660397,
+          "name": "Odette",
+          "constellation": "C2",
+          "damage": 1159198,
           "damage_share": 0.27708116080880796,
           "field_time_s": 2.5,
           "weapon": "Finale",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C6 Alyosha",
-          "damage": 193707.8076365446,
+          "name": "Alyosha",
+          "constellation": "C6",
+          "damage": 193708,
           "damage_share": 0.046301656368344386,
           "field_time_s": 2.0,
           "weapon": "Fav Lance",
           "artifact_set": "Noblesse",
-          "er_requirement": "132% ER"
+          "er_requirement_p": 132
         }
       ],
-      "total_dpr": 4183604.277469848,
-      "dps": 226140.77175512692,
+      "total_dpr": 4183604,
+      "dps": 226141,
       "rotation_time_s": 18.5,
       "rotation": "Ode EE, Yae EEE, Alyo EQ, Trav E 5N2C Q",
       "extra_info": "Yae C1 and Odette C2\nCMC C2\nlv90 R3 free 5 star sword",
@@ -1474,44 +1596,48 @@
       "team_name": "Varesa · Yae Miko · Odette · Iansan",
       "characters": [
         {
-          "name": "C0 Varesa",
-          "damage": 981087.4054968911,
+          "name": "Varesa",
+          "constellation": "C0",
+          "damage": 981087,
           "damage_share": 0.3990908594880964,
           "field_time_s": 14.5,
           "weapon": "Widsith",
           "artifact_set": "Oath",
-          "er_requirement": "106% ER"
+          "er_requirement_p": 106
         },
         {
-          "name": "C1 Yae Miko",
-          "damage": 920077.8291197466,
+          "name": "Yae Miko",
+          "constellation": "C1",
+          "damage": 920078,
           "damage_share": 0.3742731275134131,
           "field_time_s": 2.0,
           "weapon": "Widsith",
           "artifact_set": "Disenchant",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C0 Odette",
-          "damage": 493092.7856262116,
+          "name": "Odette",
+          "constellation": "C0",
+          "damage": 493093,
           "damage_share": 0.20058235639390037,
           "field_time_s": 2.5,
           "weapon": "Craft Sword",
           "artifact_set": "7.0 Supp",
-          "er_requirement": "100% ER"
+          "er_requirement_p": 100
         },
         {
-          "name": "C6 Iansan",
-          "damage": 64047.857158870196,
+          "name": "Iansan",
+          "constellation": "C6",
+          "damage": 64048,
           "damage_share": 0.026053656604590195,
           "field_time_s": 2.0,
           "weapon": "Fav Lance",
           "artifact_set": "Noblesse",
-          "er_requirement": "109% ER"
+          "er_requirement_p": 109
         }
       ],
-      "total_dpr": 2458305.8774017193,
-      "dps": 117062.18463817712,
+      "total_dpr": 2458306,
+      "dps": 117062,
       "rotation_time_s": 21.0,
       "rotation": "Yae EEE, Ode EE, Iansan EQ, Var ECPQ ecp ECPQ ecp ECP cpcp",
       "extra_info": "Yae + Ode = Not good Wheelchair",

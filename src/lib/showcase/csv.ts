@@ -1,10 +1,5 @@
 import type { Cell } from "./types";
 
-/**
- * Разбор CSV-текста в сетку значений (RFC 4180):
- * кавычки, экранирование "" , переводы строк внутри ячеек, CRLF/CR/LF, BOM.
- * Строки CSV соответствуют строкам листа 1:1 (выравнивание сохраняется).
- */
 export function parseCsv(text: string): Cell[][] {
   const src = text.charCodeAt(0) === 0xfeff ? text.slice(1) : text;
   const rows: Cell[][] = [];
@@ -53,7 +48,6 @@ export function parseCsv(text: string): Cell[][] {
     field += ch;
     i++;
   }
-  // последняя строка без перевода строки
   if (field.length > 0 || row.length > 0) {
     row.push(field);
     rows.push(row);

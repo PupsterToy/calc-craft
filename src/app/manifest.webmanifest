@@ -1,0 +1,25 @@
+{
+  "name": "CalcCraft — карточки команд Genshin Impact",
+  "short_name": "CalcCraft",
+  "description": "Удобная визуализация, сортировка и генерация эстетичных карточек из ваших расчетных таблиц Genshin Impact.",
+  "lang": "ru",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1d2739",
+  "theme_color": "#141c2b",
+  "icons": [
+    {
+      "src": "./web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
