@@ -381,6 +381,10 @@ export function ExportModal({
   const overLimit = overW || overH;
   const blockImage = prefs.tab === "image" && overLimit;
   const limitBoxRef = useAutoHeight(overLimit);
+  const limitFade =
+    prefs.tab === "image" && nested === "grid"
+      ? "transition-[opacity,visibility] duration-200 ease-out motion-reduce:transition-none "
+      : "";
 
   useEffect(() => {
     if (!staging) return;
@@ -1000,7 +1004,7 @@ export function ExportModal({
                           }
                         >
                           <div
-                            className={"col-start-1 row-start-1 transition-[opacity,visibility] duration-200 ease-out motion-reduce:transition-none " + (overLimit ? "opacity-100" : "invisible opacity-0")}
+                            className={"col-start-1 row-start-1 " + limitFade + (overLimit ? "opacity-100" : "invisible opacity-0")}
                           >
                             <p className="text-[12px] leading-[17px] text-[#9aa5b8]">
                               Итоговое изображение:{" "}
@@ -1027,7 +1031,7 @@ export function ExportModal({
                             </p>
                           </div>
                           <div
-                            className={"col-start-1 row-start-1 transition-[opacity,visibility] duration-200 ease-out motion-reduce:transition-none " + (overLimit ? "invisible opacity-0" : "opacity-100")}
+                            className={"col-start-1 row-start-1 " + limitFade + (overLimit ? "invisible opacity-0" : "opacity-100")}
                           >
                             <p className="text-[12px] leading-[17px] text-[#9aa5b8]">
                               Итоговое изображение:{" "}

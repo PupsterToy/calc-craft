@@ -62,10 +62,10 @@ import demoRaw from "@/data/demo-teams.json";
 
 const DEMO_LABEL = "Демо: Showcase · Timmie's Bird";
 
-const STAMP_DATE = "2026-10-09 17:36";
+const STAMP_DATE = "2026-10-10 08:15";
 const STAMP_COMMIT = process.env.NEXT_PUBLIC_STAMP_COMMIT ?? "dev";
-const STAMP_ROUND = "R-123";
-const STAMP_TASK = "T-161";
+const STAMP_ROUND = "R-125";
+const STAMP_TASK = "T-163";
 
 const demoData: ShowcaseData = migrateShowcaseData({
   ...(demoRaw as unknown as ShowcaseData),
@@ -449,6 +449,7 @@ export default function Home() {
     if (restored) {
       document.documentElement.removeAttribute("data-prehide");
       document.documentElement.removeAttribute("data-demo-off");
+      document.documentElement.removeAttribute("data-cache-row");
     }
   }, [restored]);
 
@@ -458,7 +459,7 @@ export default function Home() {
     hashSourceDoneRef.current = true;
     const url = readHashSource();
     if (!url) return;
-    void onLink(url);
+    void onLink(url, { fromHash: true });
   }, []);
 
   const favPersistedRef = useRef(false);
@@ -1320,7 +1321,7 @@ export default function Home() {
     setBusy(null);
   }
 
-  async function onLink(url: string): Promise<boolean> {
+  async function onLink(url: string, opts?: { fromHash?: boolean }): Promise<boolean> {
     setError(null);
     setNotice(null);
     setPendingSheets([]);
@@ -1334,7 +1335,12 @@ export default function Home() {
         via === "export",
         url,
       );
-      writeHashSource(url);
+      if (opts?.fromHash) {
+        writeHashSource(url);
+      } else {
+        const cur = readHashSource();
+        if (cur !== null && cur !== url) clearHashSource();
+      }
       return true;
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
@@ -2317,7 +2323,7 @@ export default function Home() {
       )}
 
       <footer className="mt-auto border-t border-[#2f3d59] bg-[#101724] py-4 text-center text-[11.5px] text-[#9aa5b8]">
-        Последнее обновление {STAMP_DATE} UTC • {STAMP_COMMIT} • {STAMP_ROUND}/{STAMP_TASK}
+        Последнее обновление {STAMP_DATE} UTC
 
         {!process.env.NEXT_PUBLIC_BASE_PATH && (
           <>

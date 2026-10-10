@@ -238,6 +238,15 @@ html[data-demo-off] [data-demo-hide] {
   display: none;
 }
 
+html[data-cache-row] section[aria-label="Загрузка данных"] {
+  padding-bottom: 49px;
+}
+@media (min-width: 640px) {
+  html[data-cache-row] section[aria-label="Загрузка данных"] {
+    padding-bottom: 53px;
+  }
+}
+
 .team-rotation {
   background-color: color-mix(in oklab, #080c12 25%, transparent);
 }
