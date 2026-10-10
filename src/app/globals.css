@@ -265,6 +265,7 @@ select:focus-visible {
 }
 
 html {
+  overflow-y: scroll;
   scrollbar-gutter: stable;
 }
 
