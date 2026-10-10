@@ -62,10 +62,10 @@ import demoRaw from "@/data/demo-teams.json";
 
 const DEMO_LABEL = "Демо: Showcase · Timmie's Bird";
 
-const STAMP_DATE = "2026-10-10 08:15";
+const STAMP_DATE = "2026-10-10 13:55";
 const STAMP_COMMIT = process.env.NEXT_PUBLIC_STAMP_COMMIT ?? "dev";
-const STAMP_ROUND = "R-125";
-const STAMP_TASK = "T-163";
+const STAMP_ROUND = "R-128";
+const STAMP_TASK = "T-166";
 
 const demoData: ShowcaseData = migrateShowcaseData({
   ...(demoRaw as unknown as ShowcaseData),

@@ -185,13 +185,13 @@ html[data-flash-view="rows"] [data-view-rows] {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  margin-top: 8px;
+  margin-top: 12px;
 }
 html[data-flash-view="compact"] [data-view-compact] {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
-  margin-top: 8px;
+  margin-top: 12px;
 }
 @media (min-width: 640px) {
   html[data-flash-view="compact"] [data-view-compact] {

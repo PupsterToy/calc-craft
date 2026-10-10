@@ -332,9 +332,16 @@ export function SourcePanel({
               </Tip>
               <span className="text-[#f27b7b]"> {notice.text}</span>
             </>
-          ) : notice ? (
-            <span className="text-[#a6c96a]"> · {notice.text}</span>
-          ) : null}
+          ) : (
+            <span
+              data-notice-line
+              suppressHydrationWarning
+              className="text-[#a6c96a]"
+              dangerouslySetInnerHTML={{
+                __html: notice ? " · " + escapeHtml(notice.text) : "",
+              }}
+            />
+          )}
         </p>
         <div className="flex items-center gap-1">
           {!demoHidden && (
