@@ -291,13 +291,22 @@ export function ExportModal({
   useScrollSnap(overlayRef);
 
   useEffect(() => {
+    const de = document.documentElement;
     const prevBody = document.body.style.overflow;
-    const prevHtml = document.documentElement.style.overflow;
+    const prevHtml = de.style.overflow;
+    const prevPad = de.style.paddingRight;
+    const probe = document.querySelector("header");
+    const x0 = probe ? probe.getBoundingClientRect().left : null;
     document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
+    de.style.overflow = "hidden";
+    if (probe && x0 != null) {
+      const x1 = probe.getBoundingClientRect().left;
+      if (x1 > x0) de.style.paddingRight = `${(x1 - x0) * 2}px`;
+    }
     return () => {
       document.body.style.overflow = prevBody;
-      document.documentElement.style.overflow = prevHtml;
+      de.style.overflow = prevHtml;
+      de.style.paddingRight = prevPad;
     };
   }, []);
 

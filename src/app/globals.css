@@ -234,6 +234,29 @@ html[data-prehide] [data-teams-main] {
   visibility: hidden;
 }
 
+@media (max-width: 1023px) {
+  html[data-prehide] [data-teams-main] {
+    display: none;
+  }
+}
+
+/* R-131: the EXACT-HEIGHT RESERVE. The mobile "glide" (Chrome Android's
+   animated scroll re-restoration after the page grows at hydration) and the
+   desktop demo-collapse (visibility keeps the DEMO's ~10k px, then the
+   restore collapses it to the user's height) share one root: the prehide
+   page is born at the WRONG height. When the previous session's geometry
+   was saved (showcase-viewport-v1), the pre-paint IIFE mirrors the saved
+   teams-main height into --cc-reserve + html[data-reserve]; this rule then
+   gives the hidden main EXACTLY the user's own last-rendered height (the
+   fallback keeps the two legacy behaviors above: mobile display:none /
+   desktop demo-height visibility). Born at the right height → the scroll
+   restore never clamps → hydration never spurts → nothing to re-restore. */
+html[data-prehide][data-reserve] [data-teams-main] {
+  display: block;
+  height: var(--cc-reserve);
+  overflow: hidden;
+}
+
 html[data-demo-off] [data-demo-hide] {
   display: none;
 }

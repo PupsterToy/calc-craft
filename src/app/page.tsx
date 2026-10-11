@@ -62,10 +62,10 @@ import demoRaw from "@/data/demo-teams.json";
 
 const DEMO_LABEL = "Демо: Showcase · Timmie's Bird";
 
-const STAMP_DATE = "2026-10-10 13:55";
+const STAMP_DATE = "2026-10-10 19:45";
 const STAMP_COMMIT = process.env.NEXT_PUBLIC_STAMP_COMMIT ?? "dev";
-const STAMP_ROUND = "R-128";
-const STAMP_TASK = "T-166";
+const STAMP_ROUND = "R-131";
+const STAMP_TASK = "T-169";
 
 const demoData: ShowcaseData = migrateShowcaseData({
   ...(demoRaw as unknown as ShowcaseData),
@@ -402,6 +402,17 @@ export default function Home() {
   }, [view]);
 
   useEffect(() => {
+    {
+      const w = window as unknown as { __ccPHt?: number | null };
+      if (w.__ccPHt != null) {
+        window.clearTimeout(w.__ccPHt);
+        w.__ccPHt = window.setTimeout(() => {
+          w.__ccPHt = null;
+          document.documentElement.removeAttribute("data-prehide");
+          document.documentElement.removeAttribute("data-cache-row");
+        }, 10000);
+      }
+    }
     const { sources, activeKeys: savedKeys } = readCache();
     cacheRef.current = sources;
     activeKeysRef.current = savedKeys;
@@ -452,6 +463,44 @@ export default function Home() {
       document.documentElement.removeAttribute("data-cache-row");
     }
   }, [restored]);
+
+  // R-131: remember the last-rendered geometry (the teams-main height + the
+  // page height + the view). The NEXT load's pre-paint IIFE turns the saved
+  // mh into --cc-reserve and the prehide CSS gives the hidden [data-teams-main]
+  // exactly that height — the page is born at the user's OWN height: the
+  // scroll restore never bottom-clamps and hydration never growth-spurts
+  // (the mobile "glide" and the desktop demo-collapse share this root).
+  // Saved once the layout settles + on pagehide (the reload path: pagehide
+  // fires before the navigation commits, the synchronous localStorage write
+  // lands before the new document's IIFE reads it).
+  useEffect(() => {
+    if (!restored) return;
+    const save = () => {
+      try {
+        const main = document.querySelector("[data-teams-main]");
+        if (!main) return;
+        const mh = (main as HTMLElement).offsetHeight;
+        if (!Number.isFinite(mh) || mh < 100) return;
+        localStorage.setItem(
+          "showcase-viewport-v1",
+          JSON.stringify({
+            v: 1,
+            view,
+            mh: Math.round(mh),
+            h: Math.round(document.documentElement.scrollHeight),
+            t: Date.now(),
+          }),
+        );
+      } catch {
+      }
+    };
+    const t = window.setTimeout(save, 800);
+    window.addEventListener("pagehide", save);
+    return () => {
+      window.clearTimeout(t);
+      window.removeEventListener("pagehide", save);
+    };
+  }, [restored, view]);
 
   const hashSourceDoneRef = useRef(false);
   useEffect(() => {

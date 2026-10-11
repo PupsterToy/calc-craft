@@ -56,7 +56,7 @@ async function cacheFirst(req) {
 async function networkFirstPage(req) {
   const cache = await caches.open(CACHE);
   try {
-    const res = await fetch(req);
+    const res = await fetch(req, { cache: "no-cache" });
     if (res && res.ok) cache.put(req, res.clone());
     return res;
   } catch {
