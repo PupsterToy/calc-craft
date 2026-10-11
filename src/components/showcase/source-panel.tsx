@@ -369,8 +369,9 @@ export function SourcePanel({
         </div>
       </div>
 
-      {cachedSources.length > 0 && (
-        <div className="mt-3 flex flex-wrap items-center gap-1.5">
+      <div data-cache-row-slot>
+        {cachedSources.length > 0 && (
+          <div className="mt-3 flex flex-wrap items-center gap-1.5">
           <span className="text-[11.5px] leading-[17px] text-[#9aa5b8]">Кэш таблиц:</span>
           {cachedSources.map((s) => {
             const on = activeKeys.includes(s.key);
@@ -419,7 +420,8 @@ export function SourcePanel({
             );
           })}
         </div>
-      )}
+        )}
+      </div>
 
       <div aria-live="polite" className="mt-2 space-y-2">
         {busy && (

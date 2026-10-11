@@ -62,10 +62,10 @@ import demoRaw from "@/data/demo-teams.json";
 
 const DEMO_LABEL = "Демо: Showcase · Timmie's Bird";
 
-const STAMP_DATE = "2026-10-10 19:45";
+const STAMP_DATE = "2026-10-11 12:15";
 const STAMP_COMMIT = process.env.NEXT_PUBLIC_STAMP_COMMIT ?? "dev";
-const STAMP_ROUND = "R-131";
-const STAMP_TASK = "T-169";
+const STAMP_ROUND = "R-134";
+const STAMP_TASK = "T-172";
 
 const demoData: ShowcaseData = migrateShowcaseData({
   ...(demoRaw as unknown as ShowcaseData),
@@ -464,15 +464,6 @@ export default function Home() {
     }
   }, [restored]);
 
-  // R-131: remember the last-rendered geometry (the teams-main height + the
-  // page height + the view). The NEXT load's pre-paint IIFE turns the saved
-  // mh into --cc-reserve and the prehide CSS gives the hidden [data-teams-main]
-  // exactly that height — the page is born at the user's OWN height: the
-  // scroll restore never bottom-clamps and hydration never growth-spurts
-  // (the mobile "glide" and the desktop demo-collapse share this root).
-  // Saved once the layout settles + on pagehide (the reload path: pagehide
-  // fires before the navigation commits, the synchronous localStorage write
-  // lands before the new document's IIFE reads it).
   useEffect(() => {
     if (!restored) return;
     const save = () => {
@@ -1462,7 +1453,11 @@ export default function Home() {
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(1200px_360px_at_50%_-120px,#1e2c47_0%,transparent_70%)]"
       />
-      <div ref={pageContainerRef} className="mx-auto w-full max-w-6xl flex-1 px-4 pt-8 pb-12 sm:px-6">
+      <div
+        ref={pageContainerRef}
+        data-shell
+        className="mx-auto w-full max-w-6xl flex-1 px-4 pt-8 pb-12 sm:px-6"
+      >
         <header className="mb-6">
           <div className="flex items-center gap-3">
             <Tip label="Проект в активной разработке: интерфейс и данные могут меняться">
@@ -1990,7 +1985,7 @@ export default function Home() {
         <div className="relative mt-3 flex items-center">
           <p
             data-teams-count
-            className="min-w-0 flex-1 pl-[15px] pr-3 text-[12.5px] leading-[19px] text-[#9aa5b8]"
+            className="min-w-0 flex-1 pl-[15px] pr-3 text-[12.5px] leading-[24px] text-[#9aa5b8]"
             aria-live="polite"
           >
             Показано команд: {visible.length} из {teams.length}
@@ -2015,7 +2010,7 @@ export default function Home() {
           data-teams-main
           aria-label="Команды"
           className={
-            "transition-opacity duration-150 motion-reduce:transition-none " +
+            "overflow-hidden transition-opacity duration-150 motion-reduce:transition-none " +
             (viewFading ? "opacity-0" : "opacity-100")
           }
         >
@@ -2245,7 +2240,7 @@ export default function Home() {
           ) : teams.length === 0 ? (
             <div className="mt-3 rounded-xl border border-[#2f3d59] bg-[#1d2739] p-10 text-center">
               <p className="text-[15px] leading-[22px] text-[#e8e2d5]">Демо-показ скрыт</p>
-              <p className="mx-auto mt-2 max-w-md text-[13px] leading-[19px] text-[#9aa5b8]">
+              <p data-shell-note className="mx-auto mt-2 max-w-md text-[13px] leading-[19px] text-[#9aa5b8]">
                 Загрузите xlsx, CSV или ссылку на лист Google-таблицы, отметьте сохранённые
                 источники в списке «Источники» — или верните демо кнопкой «↺ Демо-данные».
               </p>
