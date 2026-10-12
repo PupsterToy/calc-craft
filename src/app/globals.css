@@ -240,7 +240,7 @@ html[data-prehide] [data-teams-main] {
   }
 }
 
-html[data-prehide][data-reserve] [data-teams-main] {
+html[data-reserve] [data-teams-main] {
   display: block;
   height: var(--cc-reserve);
   overflow: hidden;
@@ -253,7 +253,7 @@ html[data-prehide][data-reserve] [data-teams-main] {
   margin-left: max(0px, calc((100% - 28rem - mod(100% - 28rem, 2px)) / 2));
 }
 
-html[data-prehide][data-reserve] body {
+html[data-reserve] body {
   min-height: var(--cc-page);
 }
 

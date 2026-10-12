@@ -62,10 +62,10 @@ import demoRaw from "@/data/demo-teams.json";
 
 const DEMO_LABEL = "Демо: Showcase · Timmie's Bird";
 
-const STAMP_DATE = "2026-10-11 12:15";
+const STAMP_DATE = "2026-10-11 22:00";
 const STAMP_COMMIT = process.env.NEXT_PUBLIC_STAMP_COMMIT ?? "dev";
-const STAMP_ROUND = "R-134";
-const STAMP_TASK = "T-172";
+const STAMP_ROUND = "R-137";
+const STAMP_TASK = "T-175";
 
 const demoData: ShowcaseData = migrateShowcaseData({
   ...(demoRaw as unknown as ShowcaseData),
@@ -409,7 +409,6 @@ export default function Home() {
         w.__ccPHt = window.setTimeout(() => {
           w.__ccPHt = null;
           document.documentElement.removeAttribute("data-prehide");
-          document.documentElement.removeAttribute("data-cache-row");
         }, 10000);
       }
     }
@@ -461,6 +460,7 @@ export default function Home() {
       document.documentElement.removeAttribute("data-prehide");
       document.documentElement.removeAttribute("data-demo-off");
       document.documentElement.removeAttribute("data-cache-row");
+      document.documentElement.removeAttribute("data-reserve");
     }
   }, [restored]);
 
@@ -2010,7 +2010,7 @@ export default function Home() {
           data-teams-main
           aria-label="Команды"
           className={
-            "overflow-hidden transition-opacity duration-150 motion-reduce:transition-none " +
+            "flow-root transition-opacity duration-150 motion-reduce:transition-none " +
             (viewFading ? "opacity-0" : "opacity-100")
           }
         >
