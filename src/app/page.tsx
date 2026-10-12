@@ -62,10 +62,10 @@ import demoRaw from "@/data/demo-teams.json";
 
 const DEMO_LABEL = "Демо: Showcase · Timmie's Bird";
 
-const STAMP_DATE = "2026-10-11 22:00";
+const STAMP_DATE = "2026-10-12 12:00";
 const STAMP_COMMIT = process.env.NEXT_PUBLIC_STAMP_COMMIT ?? "dev";
-const STAMP_ROUND = "R-137";
-const STAMP_TASK = "T-175";
+const STAMP_ROUND = "R-139";
+const STAMP_TASK = "T-177";
 
 const demoData: ShowcaseData = migrateShowcaseData({
   ...(demoRaw as unknown as ShowcaseData),
@@ -461,6 +461,7 @@ export default function Home() {
       document.documentElement.removeAttribute("data-demo-off");
       document.documentElement.removeAttribute("data-cache-row");
       document.documentElement.removeAttribute("data-reserve");
+      document.documentElement.removeAttribute("data-page-reserve");
     }
   }, [restored]);
 

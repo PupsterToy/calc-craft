@@ -65,3 +65,7 @@ upload/*
 /inbox/
 
 .gh123-stage-*/
+scripts/r135-evidence/
+scripts/r135-evidence-R135-orig.tar.gz
+scripts/r139-evidence/trace_*.json
+scripts/r139-evidence-R139-orig.tar.gz

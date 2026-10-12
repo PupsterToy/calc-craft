@@ -257,6 +257,10 @@ html[data-reserve] body {
   min-height: var(--cc-page);
 }
 
+html[data-page-reserve] body {
+  min-height: var(--cc-page);
+}
+
 html[data-demo-off] [data-demo-hide] {
   display: none;
 }
